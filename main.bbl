@@ -1,0 +1,11 @@
+\begin{thebibliography}{1}
+
+\bibitem{uno}
+N.~del Autor1, ``Título del artículo uno,'' {\em Revista de Informática},
+  2023.
+
+\bibitem{dos}
+N.~del Autor2, ``Título del artículo dos,'' {\em Revista de Ingeniería},
+  2022.
+
+\end{thebibliography}

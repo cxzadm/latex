@@ -1,0 +1,262 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\color{red}Estructura de un Documento en \LaTeX}
+
+\author{Bryam Fernando Cabrera Sarmiento}
+
+\date{20 de Julio de 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ... (paquetes y configuraciones)
+
+\title{\color{red}Estructura de un Documento en \LaTeX}
+\author{Bryam Fernando Cabrera Sarmiento}
+\date{20 de Julio de 2023}
+
+\begin{document}
+    \maketitle
+    
+    \begin{abstract}
+        La clase utilizada en esta actividad es \verb|article| y el tamaño de letra es de 11 puntos. Debe definirse un documento \verb|pdf| que sea idéntico a este documento.
+        
+        Para la elaboración de listas, puede que necesites consultar la referencia proporcionada en la sección \textbf{entornos}.
+    \end{abstract}
+    
+    \section{Introducción}\label{sec:1}
+    En la sección~\ref{SB1}, se realiza una práctica de Listas.
+    
+    \subsection{Listas}\label{SB1}
+    \begin{itemize}
+        \item Primer Elemento
+        \begin{itemize}
+            \item Primer Subelemento
+            \item Segundo Subelemento
+        \end{itemize}
+        \item Segundo Elemento
+        \item Tercer Elemento
+        \item \ldots
+    \end{itemize}
+    
+    \subsection{Listas Enumeradas}\label{SB2}
+    \begin{enumerate}
+        \item Primer elemento
+        \begin{enumerate}
+            \item Primer Subelemento
+            \item Segundo Subelemento
+        \end{enumerate}
+        \item Segundo Elemento
+        \item Tercer Elemento
+    \end{enumerate}
+    
+    \subsection{Descripción de Elementos}\label{SB3}
+    \begin{description}
+        \item[Rojo] Color que caracteriza el peligro.
+        \item[Azul] Color del cielo.
+    \end{description}
+    
+    \section{Matemáticas}\label{Sec:2}
+    En la sección~\ref{EC1}, realizaremos ecuaciones matemáticas. La fórmula de la teoría de la relatividad es $E=mc^2$.
+    
+    \subsection{Exponentes e Índices}\label{EC1}
+    \begin{equation}
+        k_{n+1}=n^2 + k_n^2 - k_{n-1}
+    \end{equation}
+    En la ecuación~\ref{EC1}, se observa el uso de Exponentes e índices.
+    
+    \subsection{Raíces Cuadradas}
+    \begin{equation}
+        \sqrt{\frac{a}{b}}
+    \end{equation}
+    \begin{equation}
+        \sqrt[n]{1+x+x^2+x^3+\ldots}
+    \end{equation}
+    \begin{equation}
+        \frac{n!}{k!(n-k)!}
+    \end{equation}
+    
+    \subsection{Letras Griegas}
+    \begin{equation}
+        \alpha \mu_1 + \beta \mu_2 = v
+    \end{equation}
+    La suma de los $n$ primeros números enteros positivos es $\frac{n(n+1)}{2}$, es decir, $1+2+\dots+n(n+1)$. Utilizando la notación sumatoria, lo anterior se escribiría como $\sum_{i=1}^{n}=\frac{n(n+1)}{2}$; fórmula que volveremos a escribir en modo resaltado.
+    \[
+    \sum_{i=1}^{n}=\frac{n(n+1)}{2}
+    \]
+    
+    \subsection{Matriz}
+    \[
+    \begin{matrix}
+        a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+        \hdotsfor[2]{5} \\
+        a_{n1} & a_{n2} & a_{n3} & \ldots & a_{nn}
+    \end{matrix}
+    \]
+    \begin{equation}
+        \begin{matrix}
+            a & b \\
+            c & d
+        \end{matrix}
+    \end{equation}
+    \begin{equation}
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{Bmatrix}
+            a & b \\
+            c & d
+        \end{Bmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{vmatrix}
+            a & b \\
+            c & d
+        \end{vmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{Vmatrix}
+            a & b \\
+            c & d
+        \end{Vmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{pmatrix}
+            1 & 0 & \cdots & 0 \\
+            0 & 1 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & 1
+        \end{pmatrix}
+    \end{equation}
+    
+    \subsection{Casos}
+    \[
+    \operatorname{sing} x=
+    \begin{cases}
+        1, & x>0 \\
+        0, & x=0 \\
+        -1, & x<0
+    \end{cases}
+    \]
+    
+    \subsection{Ecuaciones en varias líneas}
+    \begin{eqnarray}
+        (a+b)^2-(a-b)^2 &=& \\
+        (a+b)(a+b)-(a-b)(a-b) &=& \\
+        (a^2+2ab+b^2)-(a^2-2ab+b^2) &=& 4ab
+    \end{eqnarray}
+    \begin{align}
+        (a+b)^2-(a-b)^2 &= (a+b)(a+b)-(a-b)(a-b) \\
+        &= (a^2+2ab+b^2)-(a^2-2ab+b^2) \\
+        &= 4ab
+    \end{align}
+    
+    \section{Figuras}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=40mm,height=10mm]{logo}
+        \caption{Logo UPS}
+        \label{F1}
+    \end{figure}
+    En la Fig.~\ref{F1}, se muestra el Logo de la Universidad.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth, angle=180]{logo.png}
+        \caption{Logo UPS}
+        \label{F1}
+    \end{figure}
+    
+    \section{Tablas}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{ccc}
+            Nombre & Apellido & Nota \\ \hline \hline
+            Erwin  & Sacoto   & 34   \\
+            Erwin1 & Sacoto 1 & 36   \\
+            Jairo  & Sacoto   & 35   \\ \hline \hline
+        \end{tabular}
+        \caption{Notas}
+        \label{T1}
+    \end{table}
+    En la tabla~\ref{T1}, se muestran las notas de los estudiantes.
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c|c|c}
+            \multicolumn{3}{c}{Cuadro de Notas} \\ \hline
+            Nombre & Apellido & Nota \\
+            Erwin  & Sacoto   & 34   \\
+            Jairo  & Sacoto   & 35   \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \section{Cómo citar}\label{sec:cita}
+    En la sección~\ref{sec:cita}, se indica cómo citar en un documento~\cite{uno}.
+    Los autores en~\cite{uno} indican que \ldots
+    En~\cite{uno}, se define \ldots
+    La Ingeniería de Software es \ldots, tal como se indica en~\cite{dos}.
+    En los diferentes estudios~\cite{uno,dos}.
+    
+    \bibliographystyle{ieeetr}
+    \bibliography{bib}
+    
+\end{document}
